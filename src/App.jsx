@@ -15,8 +15,8 @@ import { FaBars } from "react-icons/fa";
 
 function App() {
 
-  const API_URL = 'http://localhost:5000/api/v1/bookmarks';
-  const AUTH_URL = 'http://localhost:5000/api/v1/auth';
+  const API_URL = `${import.meta.env.VITE_API_URL}/bookmarks`;
+  const AUTH_URL = `${import.meta.env.VITE_API_URL}/auth`;
   //1
   const [bookmarks, setBookmarks] = useState([]);
   const [editingBookmark, setEditingBookmark] = useState(null);
