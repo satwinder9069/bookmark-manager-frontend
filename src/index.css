@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light Mode Colors */
+:root {
+  --color-bg: #FFFFFF;
+  --color-surface: #F7F8FC;
+  --color-primary: #D3AFD1;
+  --color-secondary: #3A9684;
+  --color-text: #212121;
+}
+
+/* Dark Mode Colors */
+.dark {
+  --color-bg: #1E232E;
+  --color-surface: #2A303D;
+  --color-primary: #E1C4E0;
+  --color-secondary: #4AD1B6;
+  --color-text: #E0E0E0;
+}
+
+html {
+  --background-color: var(--color-bg);
+  --text-color: var(--color-text);
+}
+
+html.dark {
+  --background-color: var(--color-bg);
+  --text-color: var(--color-text);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+  50% { opacity: 0.7; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+/* Utilities */
+.animate-gradientShift { animation: gradientShift 15s ease infinite; }
+.animate-slideDown {
+  animation: slideDown 0.8s ease forwards;
+}
+.animate-fadeIn { animation: fadeIn 1s ease forwards; }
+
+/* Floating shapes style */
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(180, 222, 251, 0.2);
+  animation-name: floatUp;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
