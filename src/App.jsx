@@ -66,6 +66,14 @@ function App() {
             setAuthMode('resetPassword');
         }
   }, []); // The empty array [] ensures this runs only once when the page first loads
+
+  const handleTokenExpiration = (res) => {
+    if (res.status === 401) {
+        handleLogout(); 
+        return true;
+    }
+    return false;
+};
   //4
   useEffect(() => {
     const fetchBookmarks = async () => {
@@ -73,6 +81,11 @@ function App() {
       try {
         setLoading(true);
         const res = await fetch(API_URL, {headers: authHeaders});
+
+        if (handleTokenExpiration(res)) {
+            setLoading(false);
+            return; 
+        }
 
         const data = await res.json();
         setBookmarks(data);
