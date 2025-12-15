@@ -59,13 +59,13 @@ function App() {
             const emailFromUrl = queryParams.get('email');
 
             if (tokenFromUrl && emailFromUrl) {
-                // This now correctly calls the 'setResetToken' function from our useState hook.
+                
                 setResetToken(tokenFromUrl);
                 setUserEmail(emailFromUrl);
             }
             setAuthMode('resetPassword');
         }
-  }, []); // The empty array [] ensures this runs only once when the page first loads
+  }, []); 
 
   const handleTokenExpiration = (res) => {
     if (res.status === 401) {

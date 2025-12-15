@@ -5,10 +5,10 @@ import { FaTimes } from "react-icons/fa";
 import SortBy from './components/SortBy';
 
 const sortOptions = [
-    { value: 'date_desc', label: 'Newest' },
-    { value: 'date_asc', label: 'Oldest' },
-    { value: 'title_asc', label: 'Title (A-Z)' },
-    { value: 'title_desc', label: 'Title (Z-A)' },
+    { value: 'dateDesc', label: 'Newest' },
+    { value: 'dateAsc', label: 'Oldest' },
+    { value: 'nameAsc', label: 'Title (A-Z)' },
+    { value: 'nameDesc', label: 'Title (Z-A)' },
 ];
 
 function Header({ onSearch, onAdd, onUpdate, initialData, onCancel, sortBy, setSortBy }) {
@@ -21,6 +21,7 @@ function Header({ onSearch, onAdd, onUpdate, initialData, onCancel, sortBy, setS
             onCancel();
         }
     };
+    
 
     const handleSearchChange = (e) => {
         const item = e.target.value;
