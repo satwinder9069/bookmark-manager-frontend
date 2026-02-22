@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import BookmarkForm from './BookmarkForm';
+import BookmarkForm from '../bookmarks/BookmarkForm';
 import { IoSearch } from 'react-icons/io5';
 import { FaTimes } from "react-icons/fa";
-import SortBy from './components/SortBy';
+import SortBy from '../ui/SortBy';
 
 const sortOptions = [
     { value: 'dateDesc', label: 'Newest' },
@@ -54,6 +54,8 @@ function Header({ onSearch, onAdd, onUpdate, initialData, onCancel, sortBy, setS
                 <div className='relative flex items-center'>
                     <IoSearch className='w-5 h-5 absolute ml-3 text-gray-400 dark:text-gray-500 '/>
                     <input
+                        id='search'
+                        name='search'
                         type='text'
                         placeholder='Search'
                         value={searchItem}

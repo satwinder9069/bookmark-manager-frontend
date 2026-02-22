@@ -1,20 +1,14 @@
 import React from 'react';
-import SidebarLink from './components/SidebarLink';
-import { AllBookmarksIcon, FavouritesIcon, TagsIcon } from './components/icons';
+import SidebarLink from '../layout/SidebarLink';
 import { FaBookBookmark } from "react-icons/fa6";
 import { TbBookmarks, TbBookmarksFilled } from "react-icons/tb";
 import {AiOutlineStar, AiFillStar} from "react-icons/ai";
 import { BsTags, BsFillTagsFill } from "react-icons/bs";
 import { FaSignOutAlt } from "react-icons/fa";
-import ThemeToggle from './components/ThemeToggle';
+import ThemeToggle from '../ui/ThemeToggle';
 
 
 function Sidebar({ onFilterChange , activeFilter, onLogout}) {
-
-    // const allBookmarkIcon = AllBookmarksIcon;
-    // const favouritesIcon = FavouritesIcon;
-    // const tagsIcon = TagsIcon;
-
     return (
         <div className='w-64 h-screen sticky top-0 overflow-y-auto bg-white dark:bg-gray-800 p-6 shadow-md flex flex-col' >
             <div className='text-lg font-bold text-black dark:text-white mb-8 flex items-center space-x-2'>

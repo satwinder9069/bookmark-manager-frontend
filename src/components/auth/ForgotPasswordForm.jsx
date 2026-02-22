@@ -27,8 +27,13 @@ function ForgotPasswordForm({ onForgotPassword, onToggleAuthMode }) {
         )}
         <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
           <div>
-            <label className="block text-sm font-medium mb-1">Email</label>
+            <label htmlFor="email" className="block text-sm font-medium mb-1">
+              Email
+            </label>
             <input
+              id="email"
+              name="email"
+              autoComplete='email'
               type="email"
               placeholder="Enter your email address"
               value={email}

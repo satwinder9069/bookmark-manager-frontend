@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 
-function Bookmark({/*name, url,*/ bookmark, onEdit,  onConfirmDelete, onToggleFavourite}) {
+function Bookmark({bookmark, onEdit,  onConfirmDelete, onToggleFavourite}) {
 
     const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
     const [isNotesExpanded, setIsNotesExpanded] = useState(false);

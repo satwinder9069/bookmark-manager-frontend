@@ -4,11 +4,114 @@
 
 /* Light Mode Colors */
 :root {
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F5F5F7;
+  --color-bg-tertiary: #E8E8ED;
+
+  --color-text-primary: #1D1D1F;
+  --color-text-secondary: #86868B;
+  --color-text-tertiary: #6E6E73;
+
+  --color-accent: #0071E3;
+  --color-accent-hover: #0077ED;
+  --color-success: #30D158;
+  --color-error: #FF3B30;
+  --color-warning: #FF9500;
+  
   --color-bg: #FFFFFF;
   --color-surface: #F7F8FC;
   --color-primary: #D3AFD1;
   --color-secondary: #3A9684;
   --color-text: #212121;
+
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-strong: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* reusable components */
+.btn-primary {
+  @apply px-6 py-3 bg-blue-600 text-white rounded-full font-medium;
+  @apply transition-all duration-300;
+  box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3);
+}
+
+.btn-primary:hover {
+  @apply bg-blue-700;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 113, 227, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-medium;
+  @apply transition-all duration-300;
+}
+
+.btn-secondary:hover {
+  @apply bg-gray-200 dark:bg-gray-700;
+  transform: translateY(-1px);
+}
+
+.card {
+  @apply bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  @apply rounded-2xl;
+}
+
+.dark .card-glass {
+  background: rgba(17, 17, 17, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input {
+  @apply w-full px-4 py-3 rounded-xl;
+  @apply bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700;
+  @apply text-gray-900 dark:text-white placeholder-gray-400;
+  @apply transition-all duration-200;
+}
+
+.input:focus {
+  @apply outline-none ring-2 ring-blue-500 border-transparent;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+}
+
+.container-center {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-center {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-center {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 /* Dark Mode Colors */

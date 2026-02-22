@@ -1,6 +1,6 @@
 import React from "react";
 import Bookmark from "./Bookmark";
-import EmptyState from './components/EmptyState';
+import EmptyState from '../ui/EmptyState';
 
 function BookmarkList({bookmarks, loading, onDelete, onEdit, onConfirmDelete, onToggleFavourite, /*onAdd*/}) {
   if(loading) {

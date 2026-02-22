@@ -37,8 +37,11 @@ function ResetPasswordForm({ onResetPassword, email, isLoading }) {
         )}
         <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
           <div>
-            <label className="block text-sm font-medium mb-1">New Password</label>
+            <label className="block text-sm font-medium mb-1">
+              New Password
+            </label>
             <input
+              id="password"
               type="password"
               placeholder="Enter your new password"
               value={password}
@@ -48,8 +51,11 @@ function ResetPasswordForm({ onResetPassword, email, isLoading }) {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Confirm New Password</label>
+            <label className="block text-sm font-medium mb-1">
+              Confirm New Password
+            </label>
             <input
+              id="confirmPassword"
               type="password"
               placeholder="Confirm your new password"
               value={confirmPassword}

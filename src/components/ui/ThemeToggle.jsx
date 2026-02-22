@@ -46,6 +46,3 @@ function Themetoggle() {
 }
 
 export default Themetoggle;
-
-// import { MdDarkMode } from "react-icons/md";
-// import { CiLight } from "react-icons/ci";

@@ -50,9 +50,13 @@ function RegisterForm({onRegister, onToggleAuthMode }) {
                 )}
                 <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
                     <div>
-                        <label className="block text:sm font-medium text-gray-700 dark:text-gray-300 mb-1">Username</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            Username
+                        </label>
                         <input
+                        id="username"
                         type="text"
+                        autoComplete="username"
                         placeholder="Enter your username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
@@ -63,9 +67,13 @@ function RegisterForm({onRegister, onToggleAuthMode }) {
                         />
                     </div>
                     <div>
-                        <label className="block text:sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                        <label className="block text:sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            Email
+                        </label>
                         <input
+                        id="email"
                         type="email"
+                        autoComplete="email"
                         placeholder="Enter your email address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -76,9 +84,13 @@ function RegisterForm({onRegister, onToggleAuthMode }) {
                         />
                     </div>
                     <div>
-                        <label className="block text:sm font-medium text-gray-700 dark:text-gray-300 mb-1">Password</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            Password
+                        </label>
                         <input
+                        id="password"
                         type="password"
+                        autoComplete="new-password"
                         placeholder="Create a password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -89,7 +101,9 @@ function RegisterForm({onRegister, onToggleAuthMode }) {
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Confirm Password</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            Confirm Password
+                            </label>
                         <input
                         type="password"
                         placeholder="Confirm your password"

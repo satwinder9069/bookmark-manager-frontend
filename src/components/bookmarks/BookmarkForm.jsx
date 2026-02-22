@@ -56,7 +56,10 @@ function BookmarkForm({initialData, onAdd, onCancel}) {
                 {initialData ? 'Edit Bookmark' : 'Add a New Bookmark'}
                 </h2>
             <form onSubmit={handleSubmit} className="flex flex-col">
+                <label htmlFor="site-name">Site Name</label>
                 <input 
+                    id="site-name"
+                    name="siteName"
                     className="p-2 mb-2 border border-gray-300 text-gray-900 dark:text-gray-100 rounded-md"
                     type="text" 
                     placeholder="Site Name" 
@@ -65,7 +68,10 @@ function BookmarkForm({initialData, onAdd, onCancel}) {
                     required
                 />
 
+                <label htmlFor="site-url">Site URL</label>
                 <input
+                    id="site-url"
+                    name="siteUrl"
                     className="p-2 mb-2 border border-gray-300 text-gray-900 dark:text-gray-100 rounded-md"
                     type="url"
                     placeholder="Site URL"
@@ -73,7 +79,10 @@ function BookmarkForm({initialData, onAdd, onCancel}) {
                     onChange={(e) => setUrl(e.target.value)}
                     required
                 />
+                <label htmlFor="description">Description</label>
                 <textarea
+                    id="description"
+                    name="description"
                     placeholder="A short description of the site"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
@@ -84,7 +93,10 @@ function BookmarkForm({initialData, onAdd, onCancel}) {
                     {description.length} / 500 characters
                 </p>
                 
+                <label htmlFor="notes">Notes</label>
                 <textarea
+                    id="notes"
+                    name="notes"
                     className="p-2 mb-2 border border-gray-300 text-gray-900 dark:text-gray-100 rounded-md"
                     placeholder="Notes"
                     value={notes}
@@ -94,7 +106,10 @@ function BookmarkForm({initialData, onAdd, onCancel}) {
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                     {notes.length} / 300 characters
                 </p>
+                <label htmlFor="tags">Tags</label>
                 <input 
+                    id="tags"
+                    name="tags"
                     className="p-2 mb-4 border border-gray-300 text-gray-900 dark:text-gray-100 rounded-md"
                     type="text"
                     placeholder="Tags (comma-separated e.g. #new, #react)"
@@ -121,10 +136,8 @@ function BookmarkForm({initialData, onAdd, onCancel}) {
                     </button>
                 </div>
             </form>
-
         </div>
     );
-
 }
 
 export default BookmarkForm;
