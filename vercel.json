@@ -1,6 +1,5 @@
 {
   "routes": [
-<<<<<<< HEAD
     {
       "handle": "filesystem"
     },
@@ -8,8 +7,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-=======
-    { "src": "/(.*)", "dest": "/" }
->>>>>>> f48eacf26186f5792ed8e4f5979e27ccfd6b58d3
   ]
 }
