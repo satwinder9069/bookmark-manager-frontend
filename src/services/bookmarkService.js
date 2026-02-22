@@ -30,7 +30,7 @@ export const bookmarkService = {
 
     // Update bookmark
     update: async (id, updateData, headers) => {
-        const result = await fetch (API_ENDPOINTS.BOOKMARK_BY_ID(id), {
+        const result = await apiCall(API_ENDPOINTS.BOOKMARK_BY_ID(id), {
             method: 'PUT',
             headers,
             body: JSON.stringify(updateData),
@@ -44,7 +44,7 @@ export const bookmarkService = {
 
     // Delete bookmark
     delete: async (id, headers) => {
-        const result = await fetch(API_ENDPOINTS.BOOKMARK_BY_ID(id), {
+        const result = await apiCall(API_ENDPOINTS.BOOKMARK_BY_ID(id), {
             method: 'DELETE',
             headers,
         });
@@ -58,7 +58,7 @@ export const bookmarkService = {
 
     // Toggle Favorite Bookmark
     toggleFavourite: async (id, isFavourite, headers) => {
-        const result = await fetch (API_ENDPOINTS.BOOKMARK_BY_ID, {
+        const result = await apiCall(API_ENDPOINTS.BOOKMARK_BY_ID(id), {
             method: 'PUT',
             headers,
             body: JSON.stringify({ isFavourite }),
