@@ -109,6 +109,7 @@ const DashboardPage = () => {
 
     const handleLogoutClick = () => {
         setShowLogoutConfirm(true);
+        setIsSidebarOpen(false);
     };
 
     const handleConfirmLogout = () => {

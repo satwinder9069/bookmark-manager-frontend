@@ -11,7 +11,7 @@ export const API_ENDPOINTS = {
     BOOKMARKS: `${API_BASE_URL}/bookmarks`,
     BOOKMARK_BY_ID: (id) => `${API_BASE_URL}/bookmarks/${id}`,
 };
-
+console.log("ENV:", import.meta.env.VITE_API_URL);
 let onTokenExpired = null;
 
 export const setTokenExpirationHandler = (callback) => {
