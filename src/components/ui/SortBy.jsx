@@ -6,10 +6,10 @@ function SortBy({ sortBy, setSortBy, sortOptions }) {
     const currentSortLabel = sortOptions.find(opt => opt.value === sortBy)?.label || 'Sort By';
 
     return (
-        <div className="relative inline-block text-left">
+        <div className="relative inline-block text-left w-full sm:w-auto">
             <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="bg-blue-600 text-white font-semibold px-4 py-1.5 rounded-full shadow-lg hover:bg-blue-700 transition flex items-center space-x-2"
+                className="w-full sm:w-auto bg-[var(--color-bg-tertiary)] text-[var(--color-text-primary)] border border-[var(--color-border)] font-medium px-4 py-2 text-sm lg:py-2.5 rounded-lg shadow-sm hover:bg-[var(--color-border)] transition-all duration-200 flex items-center justify-between sm:justify-start space-x-2"
             >
                 {/* CHANGED: Display the current sort label instead of static text */}
                 <span>{currentSortLabel}</span>
@@ -17,7 +17,7 @@ function SortBy({ sortBy, setSortBy, sortOptions }) {
             </button>
 
             {menuOpen && (
-                <div className="absolute mt-2 w-40 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-50">
+                <div className="absolute right-0 mt-2 w-48 bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-xl shadow-[var(--shadow-strong)] z-50 overflow-hidden">
                     {sortOptions.map(opt => (
                         <button
                             key={opt.value}
@@ -25,11 +25,11 @@ function SortBy({ sortBy, setSortBy, sortOptions }) {
                                 setSortBy(opt.value);
                                 setMenuOpen(false);
                             }}
-                            // You can add a highlight to the currently active sort option
                             className={`
-                                block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 
-                                hover:bg-gray-100 dark:hover:bg-gray-700
-                                ${sortBy === opt.value ? 'font-bold bg-gray-100 dark:bg-gray-700' : ''}
+                                block w-full text-left px-4 py-2.5 text-sm transition-colors duration-200
+                                ${sortBy === opt.value
+                                    ? 'bg-[var(--color-accent)]/10 text-[var(--color-accent)] font-semibold'
+                                    : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-tertiary)] hover:text-[var(--color-text-primary)]'}
                             `}
                         >
                             {opt.label}

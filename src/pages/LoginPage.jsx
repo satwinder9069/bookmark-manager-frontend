@@ -1,3 +1,4 @@
+/* global chrome */ 
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
@@ -13,14 +14,25 @@ const LoginPage = () => {
     const handleLogin = async (userData) => {
         try {
             const result = await authService.login(userData);
-                console.log('=== FULL LOGIN RESULT ===');
-                console.log('result:', result);
-                console.log('result.success:', result.success);
-                console.log('result.data:', result.data);
-                console.log('result.data.data:', result.data?.data);
-                console.log('========================');
             if(result.success) {
                 login(result.data);
+
+                const extensionId = `${import.meta.env.VITE_EXTENSION_ID}`; 
+
+                if (window.chrome?.runtime?.sendMessage) {
+                    chrome.runtime.sendMessage(
+                        extensionId,
+                        { type: 'SYNC_TOKEN', token: result.data.token },
+                        (response) => {
+                            if (chrome.runtime.lastError) {
+                                console.log('Extension sync failed:', chrome.runtime.lastError);
+                            } else {
+                                console.log('Token synced to extension successfully');
+                            }
+                        }
+                    );
+                } 
+
                 setToast({ message: 'Login Successfull', type: 'success' });
                 setTimeout(() => navigate('/dashboard'), 1000);
             } else {

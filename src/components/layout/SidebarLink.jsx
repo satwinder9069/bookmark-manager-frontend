@@ -1,16 +1,14 @@
 import React from "react";
 
-function SidebarLink({icon, text , active ,onClick,  activeIcon}) {
-    const activeClass = active 
-    ? 'bg-blue-600 text-white'
-    : 'text-gray-700 dark:text-gray-400 hover:bg-gray-100 hover:text-blue-600 ';
-    
+function SidebarLink({ icon, text, active, onClick, activeIcon }) {
+    const activeClass = active
+        ? 'bg-[var(--color-accent)] text-white shadow-md'
+        : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-tertiary)] hover:text-[var(--color-text-primary)]';
+
     return (
         <button
             onClick={onClick}
-            className={`
-                flex items-center space-x-3 w-full px-4 py-2 rounded-md font-semibold transition-colors 
-                ${active ? "bg-blue-100 text-blue-600" : "text-gray-700 "} ${activeClass}`}
+            className={`flex items-center space-x-3 w-full px-4 py-2.5 rounded-xl font-medium transition-all duration-200 ${activeClass}`}
         >
             {/* {icon} */}
             <span>{active ? activeIcon : icon}</span>

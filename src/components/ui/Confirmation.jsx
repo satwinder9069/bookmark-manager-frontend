@@ -1,27 +1,27 @@
 import React from "react";
 
-function Confirmation({ message , onConfirm , onCancel, confirmText = "Delete", confirmColor= "red", }) {
-    
+function Confirmation({ message, onConfirm, onCancel, confirmText = "Delete", confirmColor = "red", }) {
+
     const confirmButtonClass = confirmColor === "red"
         ? "bg-red-500 dark:bg-red-600 hover:bg-red-600 dark:hover:bg-red-700"
         : "bg-blue-500 dark:bg-blue-600 hover:bg-blue-600 dark:hover:bg-blue-700";
-    
+
     return (
-        <div className="fixed inset-0 bg-gray-400 dark:bg-gray-800 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
-            <div className="relative mx-auto p-5 border w-96 shadow-lg rounded-md bg-white dark:bg-gray-500">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-black leading-6">
+        <div className="fixed inset-0 bg-gray-900/50 backdrop-blur-sm overflow-y-auto h-full w-full flex items-center justify-center z-50">
+            <div className="relative mx-auto p-6 border border-[var(--color-border)] w-96 shadow-[var(--shadow-strong)] rounded-xl bg-[var(--color-bg-secondary)]">
+                <h3 className="text-lg font-bold text-[var(--color-text-primary)] leading-6 mb-2">
                     {message}
                 </h3>
-                <div className="mt-4 flex justify-end space-x-2">
+                <div className="mt-6 flex justify-end space-x-3">
                     <button
                         onClick={onCancel}
-                        className="bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-300 p-2 rounded-md hover:bg-gray-400 dark:hover:bg-gray-700 transition-colors"
+                        className="bg-[var(--color-bg-tertiary)] text-[var(--color-text-primary)] px-4 py-2 rounded-lg hover:bg-[var(--color-border)] transition-colors font-medium text-sm"
                     >
                         Cancel
                     </button>
                     <button
                         onClick={onConfirm}
-                        className={`${confirmButtonClass} text-white px-4 py-2 rounded-md transition-colors`}
+                        className={`${confirmButtonClass} text-white px-4 py-2 rounded-lg transition-colors font-medium text-sm shadow-md`}
                     >
                         {confirmText}
                     </button>
