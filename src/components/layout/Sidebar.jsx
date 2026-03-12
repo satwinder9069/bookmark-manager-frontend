@@ -10,7 +10,7 @@ function Sidebar({ onFilterChange, activeFilter, onLogout, tags = [] }) {
     return (
         <div className='w-64 h-screen sticky top-0 overflow-y-auto bg-[var(--color-bg-secondary)] p-6 flex flex-col' >
             <div className='text-lg font-bold text-[var(--color-text-primary)] mb-8 flex items-center space-x-2'>
-                <FaBookBookmark className='text-blue-600' />
+                <FaBookBookmark className='text-[var(--color-accent)]' />
                 <span>Bookmark Manager</span>
 
             </div>

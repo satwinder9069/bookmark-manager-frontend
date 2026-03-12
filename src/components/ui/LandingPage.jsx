@@ -122,7 +122,7 @@ function LandingPage({ onToggleAuthMode }) {
               {/* Sidebar Mock (Matches Sidebar.jsx) */}
               <div className="w-64 bg-[var(--color-bg-secondary)] p-6 hidden sm:flex flex-col border-r border-[var(--color-border)] shrink-0">
                 <div className="text-lg font-bold text-[var(--color-text-primary)] mb-8 flex items-center space-x-2">
-                  <FaBookBookmark className="text-blue-600 shrink-0" />
+                  <FaBookBookmark className="text-[var(--color-accent)] shrink-0" />
                   <span className="truncate">Bookmark Manager</span>
                 </div>
                 <nav className="space-y-4">
@@ -155,7 +155,7 @@ function LandingPage({ onToggleAuthMode }) {
                     </div>
                     <div className="hidden md:flex items-center space-x-4">
                       <div className="border border-[var(--color-border)] rounded-md px-3 py-2 text-sm text-[var(--color-text-primary)] bg-[var(--color-bg-secondary)]">Newest</div>
-                      <div className="bg-blue-600 text-white font-semibold px-4 py-2 text-sm md:text-base lg:px-6 rounded-md shadow-md">Add Bookmark</div>
+                      <div className="bg-[var(--color-accent)] text-white font-semibold px-4 py-2 text-sm md:text-base lg:px-6 rounded-md shadow-md">Add Bookmark</div>
                     </div>
                   </div>
                 </div>
