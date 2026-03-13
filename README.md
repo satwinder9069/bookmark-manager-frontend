@@ -1,69 +1,88 @@
-# 🔖 Bookmark Manager - Frontend (React + Vite) 
+# **Bookmark Manager - Frontend**
 
-A modern and responsive **web application** that allows users to easily **save, manage, and organize bookmarks** in one place.
-This project is built using **React (Vite)** for fast performance and a clean UI design, integrated with a **Node.js + Express + MongoDB** backend for complete CRUD functionality.
+[![Hosted on Vercel](https://img.shields.io/badge/Hosted-Vercel-black?logo=vercel)](https://bookmark-manager-frontend-navy.vercel.app/)
+
+**Bookmark Manager Frontend** is a responsive, elegantly designed dashboard for managing web links. This is the UI portion of a complete ecosystem built for seamless bookmarking across devices.
+
+---
+## 🚀 Project Overview & Features
+**The Problem:** Keeping track of links across different browsers and devices is cumbersome. Built-in bookmark managers often lack syncing without account lock-in, and managing them is tedious.
+This frontend solves that by offering a highly customizable dashboard that interacts with a secure Node.js REST API.
+
+**Key Features:**
+- **Responsive Dashboard:** Beautiful interface with a fluid layout and **Dark Mode** support.
+- **Dynamic Animations:** Engaging interactions powered by Framer Motion and React tsParticles.
+- **Complete CRUD Operations:** Create, read, update, and delete bookmarks intuitively.
+- **Seamless Integrations:** Connects directly with the bookmark-manager backend.
+---
+## 🔗 Related Repositories
+This project is divided into two separate repositories for modularity. You can explore the other components of the Bookmark Manager ecosystem here:
+- 🎨 **[Frontend Repository](https://github.com/satwinder9069/bookmark-manager-frontend)**: The responsive React dashboard.
+- ⚙️ **[Backend Repository](https://github.com/satwinder9069/bookmark-manager-backend)**: The Node.js REST API handling authentication and data storage.
+---
+
+## 📝 Table of Contents
+- [Project Overview & Features](#-project-overview--features)
+- [Related Repositories](#-related-repositories)
+- [Tech Stack](#-tech-stack)
+- [Folder Structure](#-folder-structure)
+- [Getting Started](#-getting-started-installation)
+- [Screenshots](#-screenshots--gifs)
 
 ---
 
-## 🚀 Tech Stack
-- React (Vite)
-- React Router
-- Axios for API communication
-- TailwindCSS for styling
-- Context API / useState for state management 
-- Deployed on Vercel -> [Live Demo](https://bookmark-manager-frontend-navy.vercel.app)
----
+## 🛠 Tech Stack
 
-## ⚙️ Setup & Run
+| Category | Technology | Purpose |
+|----------|------------|---------|
+| **Core** | React 19 & Vite | High-performance UI library and build tool |
+| **Styling** | Tailwind CSS v4 & Tailwind-Motion | Utility-first styling and micro-animations |
+| **Routing** | React Router DOM v7 | Seamless single-page application navigation |
+| **Animations** | Framer Motion & React tsParticles | Physics-based animations and particle backgrounds |
+| **Icons** | React Icons | Comprehenisve SVG icon library |
+| **Tools** | ESLint & Vercel | Code linting and production deployment hosting |
+
+---
+## 📂 Folder Structure
+```text
+src/
+ ├── assets/           # Static files like logos
+ ├── components/       # Reusable UI components & Layouts (ThemeToggle, Toast)
+ ├── pages/            # Page-level components (DashboardPage)
+ ├── ui/               # Granular UI elements (LandingPage, EmptyState)
+ ├── App.jsx           # Main Application routes
+ └── index.css         # Global Tailwind CSS configurations
 ```
+---
+## 🚦 Getting Started (Installation)
+### Prerequisites
+- [Node.js](https://nodejs.org/) v18+
+
+### 1. Clone the repo
+```bash
 git clone https://github.com/satwinder9069/bookmark-manager-frontend.git
 cd bookmark-manager-frontend
+```
+### 2. Install dependencies
+```bash
 npm install
+```
+### 3. Environment Variables
+Create a `.env` file in the root directory. You will need to provide the base API URL to point to your backend:
+```env
+VITE_API_BASE_URL=http://localhost:5000/api/v1
+```
+### 4. Run the app
+Start the Vite development server:
+```bash
 npm run dev
 ```
-Backend API URL should be added in .env file:
-```
-VITE_API_URL=https://bookmark-manager-backend-e243.onrender.com/api/v1
-```
+---
+## 🖼 Screenshots 
+- **Landing Page:**
+  ![Landing Page Application View](assets/landing_page.png)
+- **Dashboard View:**
+  ![User Dashboard View](assets/dashboard.png)
 ---
 
-## 🧩Features
-- 🔐 User authentication (login/ register)
-- CRUD operations for bookmarks
-- Search and Filter bookmarks
-- Dark / Light Mode
-- Responsive UI
-- API integration with backend
-- Deployed live via Vercel
----
-## 📸 Screenshots
-### Desktop Interface - Light Mode
-A clean and intuitive desktop interface, showcasing the primary layout with a responsive grid of bookmarks.
-
-<img width="1018" height="518" alt="Screenshot 2025-08-24 195629" src="https://github.com/user-attachments/assets/8f49fdd1-1bee-4609-9634-8492d8621242" />
-
-### Dark Mode Toggle in Action
-The application's seamless dark mode, demonstrating the clean color palette and the UI's adaptability for a more personalized user experience.
-
-<img width="1018" height="518" alt="Screenshot 2025-08-24 195650" src="https://github.com/user-attachments/assets/e2d426b5-522c-4d15-aa5c-f7989186c9eb" />
-
-### Creating a New Bookmark
-This screenshot demonstrates the bookmark creation process. The form handles user input for the bookmark's core information, including the URL, description, and tags. When submitted, this data is sent to the Express.js backend and saved in the MongoDB database, making the bookmark persistent.
-
-<img width="1018" height="518" alt="Screenshot 2025-08-24 200519" src="https://github.com/user-attachments/assets/266661d9-9597-43d0-8121-f631b2bfc79f" />
-
-### Bookmark Manager - Filtering & Dark Mode in Action
-A view of the application in dark mode, highlighting the interactive 'Favourites' filter. The sidebar provides a clear visual cue for the active filter, and the main content area displays only the bookmarks marked as favorite, demonstrating the app's powerful filtering capabilities.
-
-<img width="1909" height="913" alt="Screenshot 2025-08-24 200718" src="https://github.com/user-attachments/assets/041860b8-bc46-4abf-8859-a9ec04aa9df9" />
-
-## Sort Options
-
-<img width="521" height="297" alt="Screenshot 2025-08-24 195748" src="https://github.com/user-attachments/assets/39b8745c-93c0-409f-9054-186a1cce3de8" />
-
----
-
-## Future Enhancements
-- - 📂 Folder based bookmark organization
-- - 🧠 AI-based bookmark categorization (using Gemini/OpenAI API)
-- - 🔔 User notification & reminders
+*Note: This repository is specifically for the client-side code. The backend API code is located in a separate repository.*
